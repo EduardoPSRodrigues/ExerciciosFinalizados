@@ -1,0 +1,7 @@
+div > p > span.italico{
+    font-style: italic ;
+}
+
+div > p > span.negrito {
+    font-weight: bold ;
+}
