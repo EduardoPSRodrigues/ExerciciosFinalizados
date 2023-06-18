@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="imagem/png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Exercício 4</title>
+  </head>
+
+  <body>
+    <h2>Formulário de Cadastro</h2>
+
+    <form action="" method="get">
+      <label for="text-name">Nome:</label>
+      <input type="text" name="text-name" id="text-name" />
+
+      <br /><br />
+
+      <label for="data">Data:</label>
+      <input type="date" name="data" id="data" />
+
+      <br /><br />
+
+      <label for="CPF">CPF:</label>
+      <input
+        type="text"
+        id="CPF"
+        name="CPF"
+        placeholder="Ex: xxx.xxx.xxx-xx"
+        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+        title="Digite um CPF no formato: xxx.xxx.xxx-xx"
+      />
+
+      <br />
+      <label for="municipios">Município</label> <br />
+      <select id="municipios" name="municipios">
+        <option value="" disabled selected>Selecione</option>
+        <option value="AngradosReis">Angra dos Reis</option>
+        <option value="Araruama">Araruama</option>
+        <option value="CamposdosGoytacazes">Campos dos Goytacazes</option>
+        <option value="Macaé">Macaé</option>
+        <option value="MiguelPereira">Miguel Pereira</option>
+        <option value="Niterói">Niterói</option>
+        <option value="NovaIguaçu">NovaIguaçu</option>
+        <option value="Petrópolis">Petrópolis</option>
+        <option value="VoltaRedonda">Volta Redonda</option>
+      </select>
+
+      <button type="submit">Realizar o cadastro</button>
+    </form>
+  </body>
+</html>
