@@ -1,0 +1,199 @@
+html {
+  font-family: sans-serif;
+  font-size: 16px;
+  background-color: black;
+  color: white
+}
+
+html, body, div, header, footer, main, p, span, h1, h2, h3, h4, h5, h6, a, form, ul, ol,
+li {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+#page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+header,
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+footer > p {
+  font-size: 0.8rem;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+main,
+header,
+footer {
+  padding: 16px;
+}
+
+nav > a {
+  color: white;
+  text-decoration: none;
+}
+
+nav > a:hover {
+  text-decoration: underline;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+}
+
+#cards-container {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#cards-container > li {
+  border-width: 1px;
+  border-style: solid;
+  border-color: navy;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 8px;
+}
+
+#cards-container > li > img {
+  width: 320px;
+  display: block;
+  aspect-ratio: 4/3;
+  background-color: gray;
+  border-radius: 8px;
+}
+
+#cards-container > li > h3 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-style: italic;
+  color: navy;
+}
+
+#cards-container > li > .card-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+#cards-container > li > .card-details > .price > h4 {
+  font-size: 0.8rem;
+  font-weight: normal;
+}
+
+#cards-container > li > .card-details > .price > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#cards-container > li > .card-details > .price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#cards-container > li > .card-details > a {
+  background-color: red;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  width: 1445px;
+  max-width: calc(100vw - 64px);
+  padding: 32px;
+  gap: 16px;
+  color: navy;
+  font-weight: bold;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+form input {
+  padding: 8px;
+  border-radius: 8px;
+  border-color: gray;
+}
+
+form input[type="text"] {
+  flex-grow: 1;
+  color: #8a90bf;
+}
+
+form input[type="date"] {
+  flex-grow: 0.2;
+  color: navy;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+header button[type="submit"] {
+  background-color: red;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.05;
+}
+
+@media (max-width: 800px) {
+  body {
+    background-color: pink;
+  }
+}
+
+header{
+  color: red;
+}
