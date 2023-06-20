@@ -1,11 +1,26 @@
 html {
   font-family: sans-serif;
   font-size: 16px;
-  background-color: black;
-  color: white
 }
 
-html, body, div, header, footer, main, p, span, h1, h2, h3, h4, h5, h6, a, form, ul, ol,
+html,
+body,
+div,
+header,
+footer,
+main,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+form,
+ul,
+ol,
 li {
   margin: 0;
   border: 0;
@@ -15,8 +30,8 @@ li {
 
 html,
 body {
-  width: 100vw;
-  min-height: 100vh;
+  width: 99vw;
+  min-height: 99vh;
 }
 
 #page-container {
@@ -25,25 +40,36 @@ body {
   flex-direction: column;
 }
 
-
-
-header,
-footer {
+header {
   background-color: black;
-  color: white;
+  color: red;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 20px;
 }
 
 .logo-text {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-footer > p {
-  font-size: 0.8rem;
+#Login {
+  background-color: red;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+#idiomaELogin {
+  display: flex;
+  gap: 12px;
 }
 
 main {
@@ -53,147 +79,80 @@ main {
   align-items: center;
   justify-content: center;
   gap: 32px;
+  background-color: black;
+  color: white;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+#pesquisar {
+  display: flex;
+  gap: 12px;
+  border-radius: 8px;
+  border-color: black;
+  width: 50vw;
+}
+
+#input-pesquisar {
+  display: flex;
+  gap: 12px;
+  border-radius: 8px;
+  border-color: black;
+  flex-grow: 1;
+}
+
+hr {
+  color: white;
+  width: 95vw;
+}
+
+#box-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#box1-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  height: 400px;
+  gap: 50px;
+  padding: 60px;
+}
+
+#box1 {
+  display: flex;
+  justify-content: center;
+  height: 400px;
 }
 
 main,
-header,
 footer {
   padding: 16px;
 }
 
-nav > a {
+footer {
+  background-color: black;
   color: white;
-  text-decoration: none;
-}
-
-nav > a:hover {
-  text-decoration: underline;
-}
-
-nav {
   display: flex;
-  gap: 16px;
-}
-
-#cards-container {
-  width: 100%;
-  list-style: none;
-  display: flex;
+  justify-content: space-around;
+  align-items: center;
   flex-direction: row;
-  justify-content: space-evenly;
-  gap: 16px;
-  flex-wrap: wrap;
 }
 
-#cards-container > li {
-  border-width: 1px;
-  border-style: solid;
-  border-color: navy;
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  padding: 8px;
-  gap: 8px;
-}
-
-#cards-container > li > img {
-  width: 320px;
-  display: block;
-  aspect-ratio: 4/3;
-  background-color: gray;
-  border-radius: 8px;
-}
-
-#cards-container > li > h3 {
-  font-size: 1.2rem;
-  font-weight: normal;
-  font-style: italic;
-  color: navy;
-}
-
-#cards-container > li > .card-details {
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-#cards-container > li > .card-details > .price > h4 {
-  font-size: 0.8rem;
-  font-weight: normal;
-}
-
-#cards-container > li > .card-details > .price > p {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-#cards-container > li > .card-details > .price {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-#cards-container > li > .card-details > a {
-  background-color: red;
-  color: white;
-  padding: 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-form {
-  display: flex;
-  width: 1445px;
-  max-width: calc(100vw - 64px);
-  padding: 32px;
-  gap: 16px;
-  color: navy;
-  font-weight: bold;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-form input {
-  padding: 8px;
-  border-radius: 8px;
-  border-color: gray;
-}
-
-form input[type="text"] {
-  flex-grow: 1;
-  color: #8a90bf;
-}
-
-form input[type="date"] {
-  flex-grow: 0.2;
-  color: navy;
-  font-size: 1.2rem;
-  text-align: center;
-  font-weight: bold;
-}
-
-header button[type="submit"] {
-  background-color: red;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 0.05;
-}
-
-@media (max-width: 800px) {
-  body {
-    background-color: pink;
-  }
-}
-
-header{
-  color: red;
+footer > p {
+  font-size: 1rem;
+  padding: 5px;
 }
