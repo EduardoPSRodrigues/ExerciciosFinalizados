@@ -120,6 +120,7 @@ hr {
   display: flex;
   flex-direction: column;
   text-align: center;
+  flex-wrap: wrap;
 }
 
 #box1-text {
@@ -136,6 +137,7 @@ hr {
   display: flex;
   justify-content: center;
   height: 400px;
+
 }
 
 main,
