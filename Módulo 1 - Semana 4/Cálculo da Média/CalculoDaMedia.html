@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Média</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <form class="formulario">
+
+        <h1>Cálculo da Média</h1>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201558.png"
+            alt="Imagem da Média" 
+            width="20%">
+
+        <input autofocus id="campo-nota1" type="number" name="" 
+        placeholder="Digite a primeira nota">
+
+        <input id="campo-nota2" type="number" name="" 
+        placeholder="Digite a segunda nota">
+
+        <input id="campo-nota3" type="number" name="" 
+        placeholder="Digite a terceira nota">
+
+        <select id="selectMedia">
+            <option value="" selected disabled>Seleciona a opção da média</option>
+            <option value="mediaAritmetica">Média Aritmética</option>
+            <option value="mediaPonderada">Média Ponderada</option>
+        </select>
+
+        <button id="login-button" onclick="clicarNoBotao()" type="button">Calcular</button>
+        
+        <!-- Botão oculto - Java irá aparecer quando a função for ativada -->
+        <button style="display: none;" id="resetaFormulario" onclick="location.reload()">Calcular Novamente</button>
+
+    </form>
+
+    <script src="CalculoDaMedia.js"></script>
+</body>
+
+</html>
