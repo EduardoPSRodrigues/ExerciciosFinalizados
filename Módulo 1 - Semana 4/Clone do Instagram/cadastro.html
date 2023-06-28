@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Clone Instagram</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <form class="formulario">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/840px-Instagram_logo.svg.png"
+            alt="Logotipo do instagram" 
+            width="250px">
+
+        <p>Cadastre-se para ver fotos e vídeos dos seus amigos</p>
+
+        <div class="input-area">
+            <input 
+            autofocus 
+            id="campo-nomeCompleto"
+            type="text" 
+            name=""  
+            placeholder="Nome completo">
+            <span id="erro-nome" class="texto-erro" hidden></span>
+            <!-- hidden faz o campo sumir, sendo que a mensagem de erro quem vai
+            trazer é o javascript -->
+        </div>
+
+        <input 
+        autofocus 
+        id="campo-email"
+        type="email" 
+        name=""  
+        placeholder="E-mail">
+
+        <input 
+        autofocus 
+        id="campo-telefone"
+        type="tel" 
+        name=""  
+        placeholder="Telefone">
+
+        <input 
+        autofocus 
+        id="campo-nomeUsuario"
+        type="text" 
+        name=""  
+        placeholder="Nome de usuário">
+
+        <div class="input-area">
+        <input 
+        id="campo-senha"
+        type="password" 
+        name="" 
+        placeholder="Senha">
+        <span id="erro-senha" class="texto-erro" hidden></span>
+
+        </div>
+
+        <p>Ao se cadastrar, você concorda com nossos Termos, Política de Privacidade
+            e Política de Cookies
+        </p>
+
+
+        <!-- autofocus - quando minha tela é recarregada, esse input será selecionado
+        automaticamente -->
+
+        <button 
+        id="login-button"
+        onclick="fazerCadastro()"
+        type="button">Cadastre-se</button>
+
+
+        <!-- onclick - ao clicar no botão, irá chamar a minha função
+        
+        Quando o button for type=submit, ao clicar a tela dá um reset e some as informações
+        Quando for type=button, ao clicar a informação é transferida mas fica na tela
+    -->
+
+    </form>
+
+    <script src="Scripts/cadastro.js"></script>
+</body>
+
+</html>

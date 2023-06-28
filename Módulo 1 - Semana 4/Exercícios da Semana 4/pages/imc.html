@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMC</title>
+
+  <style>
+    :root {
+      font-size: 18px
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      width: 40%;
+      gap: 8px;
+      padding: 10px;
+      margin: 0 auto;
+    }
+
+    #id-imagem {
+      width: 75px;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      font-family: sans-serif;
+    }
+
+    #id-peso,
+    #id-altura {
+      border: 2px solid #d6dce2;
+      border-radius: 4px;
+
+      height: 35px;
+      width: 200px;
+      padding: 2px;
+    }
+
+    #id-button {
+      background-color: #6558f5;
+      color: white;
+
+      padding: 10px;
+      width: 80px;
+
+      border: 2px solid #6558f5;
+      border-radius: 4px;
+    }
+
+
+
+    .input-area {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .texto-erro {
+      color: red;
+      margin: 4px;
+      font-size: 0.9rem;
+      ;
+    }
+
+    .input-error {
+      border-color: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <h1>Cálculo do IMC</h1>
+
+    <img id="id-imagem"
+      src="https://play-lh.googleusercontent.com/ouL1lfSP_CyUgb5OUvI51jG3cevMfulA1GZGtS63r3Xfa8STYiIxq6KiY3PkMc6PcTk"
+      alt="Icone do IMC">
+
+    <div id="ocultarPagina">
+      <div class="input-area">
+        <input type="number" name="peso" id="id-peso" placeholder="Peso">
+        <span id="erro-peso" class="texto-erro" hidden></span>
+      </div> <br>
+
+      <div class="input-area">
+        <input type="number" name="altura" id="id-altura" placeholder="Altura">
+        <span id="erro-altura" class="texto-erro" hidden></span>
+      </div> <br>
+
+
+      <button id="id-button" onclick="calcularIMC()" type="button">Calcular</button>
+    </div>
+
+    <div id="aparecerResultado" hidden>
+
+      <p> O resultado do IMC é: <span id="resultado"></span></p>
+      <p id="msgDoResultado"></p>
+
+      <button type="reset" onclick="location.reload()">Recalcular</button>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
+
+<script>
+
+  function calcularIMC() {
+
+    var peso = document.getElementById("id-peso").value;
+    var altura = document.getElementById("id-altura").value;
+
+    document.getElementById("id-peso").classList.remove("input-error")
+    document.getElementById("id-altura").classList.remove("input-error")
+    document.getElementById("id-peso").classList.remove("texto-erro")
+    document.getElementById("id-altura").classList.remove("texto-erro")
+
+    if (!peso) {
+      document.getElementById("id-peso").classList.add("input-error");
+      document.getElementById("id-peso").focus();
+      document.getElementById("erro-peso").hidden = false;
+      document.getElementById("erro-peso").innerText = "Digite o valor do peso."
+    }
+    /* Começo com o nome escondido e caso caia nesse if o campo irá aparecer */
+    else if (!altura) {
+      document.getElementById("id-altura").classList.add("input-error");
+      document.getElementById("id-altura").focus();
+      document.getElementById("erro-altura").hidden = false;
+      document.getElementById("erro-altura").innerText = "Digite o valor da altura."
+    } else {
+      document.getElementById("id-button").disabled = true
+      document.getElementById("id-button").style.opacity = 0.5
+      document.getElementById("id-button").innerText = "Calculando..."
+
+
+      var imc = peso / (altura * altura)
+
+      if (imc <= 18.5) {
+        var resultadoDaFuncao = document.getElementById("resultado")
+        var msg = document.getElementById("resultado")
+
+        document.getElementById("aparecerResultado").hidden = false;
+        resultadoDaFuncao.innerHTML = (imc).toFixed(2);
+        msgDoResultado.innerText = "Você está abaixo do peso!"
+      }
+      else if (imc >= 18.6 && imc <= 24.9) {
+        var resultadoDaFuncao = document.getElementById("resultado")
+        var msg = document.getElementById("resultado")
+
+        document.getElementById("aparecerResultado").hidden = false;
+        resultadoDaFuncao.innerHTML = (imc).toFixed(2);
+        msgDoResultado.innerText = "Você está com peso ideal!"
+
+      }
+      else if (imc >= 25.0 && imc <= 29.9) {
+        var resultadoDaFuncao = document.getElementById("resultado")
+        var msg = document.getElementById("resultado")
+
+        document.getElementById("aparecerResultado").hidden = false;
+        resultadoDaFuncao.innerHTML = (imc).toFixed(2);
+        msgDoResultado.innerText = "Você está levemente acima do peso!"
+      }
+      else if (imc >= 30 && imc <= 34.9) {
+        var resultadoDaFuncao = document.getElementById("resultado")
+        var msg = document.getElementById("resultado")
+
+        document.getElementById("aparecerResultado").hidden = false;
+        resultadoDaFuncao.innerHTML = (imc).toFixed(2);
+        msgDoResultado.innerText = "Você está com Obesidade Grau I!"
+      }
+      else if (imc >= 35 && imc <= 39.9) {
+        var resultadoDaFuncao = document.getElementById("resultado")
+        var msg = document.getElementById("resultado")
+
+        document.getElementById("aparecerResultado").hidden = false;
+        resultadoDaFuncao.innerHTML = (imc).toFixed(2);
+        msgDoResultado.innerText = "Você está com Obesidade Grau II!"
+
+      } else {
+        var resultadoDaFuncao = document.getElementById("resultado")
+        var msg = document.getElementById("resultado")
+
+        document.getElementById("aparecerResultado").hidden = false;
+        resultadoDaFuncao.innerHTML = (imc).toFixed(2);
+        msgDoResultado.innerText = "Você está com Obesidade Grau III!"
+
+
+      }
+
+      document.getElementById("ocultarPagina").hidden = true;
+
+    }
+
+  }
+</script>

@@ -1,0 +1,74 @@
+.formulario{
+    margin: 0 auto;
+    width: 40%;
+
+    border-radius: 4px;
+    border: 2px solid #f2f2f2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    align-items: center;
+    padding: 12px;
+}
+
+input{
+    background-color: #fafafa;
+    height: 40px;
+    width: 80%;
+
+    border-radius: 8px;
+    border: 1px solid #f2f2f2;
+
+    outline: none;
+    /* Quando clico no input aparece uma borda preta, para tirar isso, usa o outline: none */
+}
+
+/* Foi preciso criar uma DIV para a configuração do formulário não interferir no site
+Com isso criei uma classe de input-area e fui mais especifico em criar uma classe que fosse
+filho de input para deixar o tamanho desejado e coloquei uma mensagem de texto de erro*/
+.input-area{
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+}
+
+.input-area input{
+    width: 100%;
+}
+
+.texto-erro{
+    color: red;
+    /* Para a mensagem não ficar colada no input */
+    margin: 4px;
+}
+
+button{
+    background-color: #4bb4f8;
+    color: white;
+
+    font-size: 16px;
+
+    height: 40px;
+    width: 80%;
+  
+    border-radius: 8px;
+    border: none;
+    /* border: none - Tirar as bordas*/
+}
+
+/* button:hover - Quando posicionar o mouse em cima do button irá trocar a cor */
+button:hover{
+    background-color: #2985c2 ;
+}
+
+a{
+    color: #707b88;
+    font-size: 14px;
+}
+
+.input-error{
+    border-color: red;
+}

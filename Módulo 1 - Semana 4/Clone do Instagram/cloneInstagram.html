@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone Instagram</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <form class="formulario">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/840px-Instagram_logo.svg.png"
+            alt="Logotipo do instagram" width="250px">
+
+        <input autofocus id="campo-email" type="text" name="" placeholder="Telefone, nome do usuário ou e-mail">
+
+        <input id="campo-senha" type="password" name="" placeholder="Senha">
+
+        <!-- autofocus - quando minha tela é recarregada, esse input será selecionado
+        automaticamente -->
+
+        <button id="login-button" onclick="clicarNoBotao()" type="button">Entrar</button>
+
+        <a href="">Esqueceu a senha?</a>
+
+        <!-- role="button" - Transforma semanticamente a categoria "a" em um button 
+        <a href="" role="button">Esqueceu a senha?</a> 
+    
+        onclick - ao clicar no botão, irá chamar a minha função
+        
+        Quando o button for type=submit, ao clicar a tela dá um reset e some as informações
+        Quando for type=button, ao clicar a informação é transferida mas fica na tela
+    -->
+
+    </form>
+
+    <script src="Scripts/cloneInstagram.js"></script>
+</body>
+
+</html>

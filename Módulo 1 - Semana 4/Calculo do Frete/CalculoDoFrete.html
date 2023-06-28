@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo do Frete</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <form class="formulario">
+
+        <h1>Cálculo do Frete</h1>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7--M2-lkVV5BJKP3463EPlZeAlvid3tWT-wW_04PDdyC6m1h1PYMDWFLpEUvfmBvSXHA&usqp=CAU"
+            alt="Imagem de Frete" 
+            width="25%">
+
+        <input autofocus id="campo-peso" type="number" name="" 
+        placeholder="Peso do produto">
+
+        <input id="campo-distancia" type="number" name="" 
+        placeholder="Distância do trajeto">
+
+        <button id="login-button" onclick="clicarNoBotao()" type="button">Calcular</button>
+        
+        <!-- Botão oculto - Java irá aparecer quando a função for ativada -->
+        <button style="display: none;" id="resetaFormulario" onclick="location.reload()">Calcular Novamente</button>
+
+    </form>
+
+    <script src="CalculoDoFrete.js"></script>
+</body>
+
+</html>
