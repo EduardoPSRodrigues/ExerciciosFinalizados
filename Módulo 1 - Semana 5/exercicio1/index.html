@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 1 | M1-S05</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js"></script>
+
+  </head>
+  <body>
+    <header>
+      <h1>Exercício 1 | S05-M1</h1>
+      <p>Time: [Time Javascript não é Java]</p>
+    </header>
+
+    <main>
+
+      <form class="formulario">
+
+        <h2>Classificação da Idade</h2>
+
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLYqrA2M4TpIgS3umAPk4SllQQMkVaA_IQmW67G4gqip8WJKDldhkUUZwDaWZQ0jlm6KI&usqp=CAU"
+            alt="Imagem da Faixa Etária" 
+            width="50%">
+
+        <input autofocus id="campo-idade" type="number" name="" 
+        placeholder="Digite a sua idade">
+
+        <button id="login-button" onclick="clicarNoBotao()" type="button">Classificar</button>
+        
+        <!-- Botão oculto - Java irá aparecer quando a função for ativada -->
+        <button style="display: none;" id="resetaFormulario" onclick="location.reload()">Classificar Novamente</button>
+
+    </form>
+    </main>
+
+    <footer>
+      <p>2023 | [Time Javascript não é Java] | DiH</p>
+    </footer>
+  </body>
+</html>
