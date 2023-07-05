@@ -28,3 +28,4 @@ const calculaTabuada1 = (numero2) => {
 console.log("");
 console.log("Tabuada com Arrow Function");
 calculaTabuada1(numero);
+
