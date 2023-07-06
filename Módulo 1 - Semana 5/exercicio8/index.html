@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercício 8 | M1-S05</title>
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <style>
+      #formulario {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Exercício 8 | S05-M1</h1>
+      <p>Time: [Time Javascript não é Java]</p>
+      <p>Autor: Eduardo Phelipe dos Santos Rodrigues</p>  
+    </header>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exercício 7 | M1-S05</title>
-  <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="../assets/styles.css" />
-  <script src="app.js"></script>
-</head>
+    <main>
+      <h2>Calculadora de P.A. e P.G.</h2>
+      <p>Informe os valores para o cálculo.</p>
 
-<body>
-  <header>
-    <h1>Exercício 8 | S05-M1</h1>
-    <p>Time: [Time Javascript não é Java]</p>
-    <p>Autor: Eduardo Phelipe dos Santos Rodrigues</p>
-  </header>
+      <div id="formulario">
+        <label for="valor-inicial">Valor Inicial</label>
+        <input type="text" id="valor-inicial" value="0" />
 
-  <main>
-    <h2>Construa uma Calculadora de P.A.</h2>
-    <p>Abra o console e confira o resultado (F12).</p>
-    <a href="/">Voltar</a>
-  </main>
+        <label for="valor-raiz">Valor Raiz</label>
+        <input type="text" id="valor-raiz" value="0" />
 
-  <footer>
-    <p>2023 | [Time Javascript não é Java] | DiH</p>
-  </footer>
-</body>
+        <label for="valor-qtd-termos">Quantidade de Termos</label>
+        <input type="text" id="valor-qtd-termos" value="0" />
 
+        <div>
+          <button id="botao-calcular-pa">Calcular PA</button>
+          <button id="botao-calcular-pg">Calcular PG</button>
+        </div>
+      </div>
+
+      <br />
+      <a href="/">Voltar</a>
+    </main>
+
+    <footer>
+      <p>2023 | DevInProf | DiH</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
 </html>
