@@ -1,57 +1,55 @@
-console.log("Módulo 1 - Semana 5 - Exercício 6");
+console.log("Módulo 1 - Semana 5 - Exercício 7");
 
 /* --------------------------------------------------------------------------
-Um palíndromo é quando a palavra que se pode ler, indiferentemente, da esquerda para direita
-ou vice-versa", como por exemplo: osso, Ana, radar.
+Opção 1 - Destructuring
 --------------------------------------------------------------------------*/
 
-function verificaPalindromo(palavra) {
-  if (!palavra || !palavra.length) {
-    console.log(`Variável vazia, favor insira uma palavra`);
-    return; //Finaliza a função
-  }
+const pessoa = {
+  nome: "Ada",
+  idade: 36,
+  profissao: "matemática",
+};
 
-  const finalPalavra = palavra.length - 1;
+const mensagem = montaMensagem(pessoa);
+console.log(mensagem);
 
-  // Fazer um for para percorrer a palavra toda no sentido horário e anti-horário
+function montaMensagem(pessoa) {
+  // Fazendo o destructuring
+  const { nome, idade, profissao } = pessoa;
 
-  for (let i = 0; i < palavra.length; i++) {
-    console.log(palavra[i], palavra[finalPalavra - i]);
-  }
-
-  for (let i = 0; i < palavra.length; i++) {
-    if (palavra[i] !== palavra[finalPalavra - i])
-      return console.log(`Função 1: A palavra ${palavra} não é um palíndromo`);
-  }
-
-  return console.log(`Função 1: A palavra ${palavra} é um palíndromo`);
+  return `Esta é ${nome}, tem ${idade} anos e é ${profissao}.`;
 }
 
 /* --------------------------------------------------------------------------
-Fazendo uma função com SPLIT, REVERSE E JOIN
-SPLIT("") separa letras em um array de letras
-REVERSE() inverte a ordem das letras do array
-JOIN("") une as letras novamente em uma string
+Opção 2 - Destructuring direto
 --------------------------------------------------------------------------*/
 
-function verificaPalindromo2(palavra) {
-  if (!palavra || !palavra.length) {
-    console.log(`Variável vazia, favor insira uma palavra`);
-    return; //Finaliza a função
-  }
+const pessoa1 = {
+  nome: "José",
+  idade: 10,
+  profissao: "bebê",
+};
 
-  const palavraInvertida = palavra.split("").reverse().join("");
-  if (palavra === palavraInvertida) {
-    console.log(`Função 2: A palavra ${palavra} é um palíndromo`);
-  } else {
-    console.log(`Função 2: A palavra ${palavra} não é um palíndromo`);
-  }
+const mensagem2 = montaMensagem1(pessoa1);
+console.log(mensagem2);
+
+function montaMensagem1({ nome, idade, profissao }) {
+  return `Esta é ${nome}, tem ${idade} anos e é ${profissao}.`;
 }
 
-verificaPalindromo("ana");
-verificaPalindromo("julia");
-verificaPalindromo("arara");
+/* --------------------------------------------------------------------------
+Opção 3 - Destructuring direto com Arrow Function
+--------------------------------------------------------------------------*/
 
-verificaPalindromo2("josé");
-verificaPalindromo2("osso");
-verificaPalindromo2("trem");
+const pessoa2 = {
+  nome: "Isa",
+  idade: 30,
+  profissao: "empresária",
+};
+
+const montaMensagem2 = ({ nome, idade, profissao }) => {
+  return `Esta é ${nome}, tem ${idade} anos e é ${profissao}.`;
+};
+
+const mensagem3 = montaMensagem2(pessoa2);
+console.log(mensagem3);
