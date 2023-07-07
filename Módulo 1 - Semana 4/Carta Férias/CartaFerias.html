@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Férias</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <form class="formulario">
+
+        <h1>Carta de Férias</h1>
+
+        <img src="https://blog.fras-le.com/wp-content/uploads/2019/01/original-cd397f5606eebb7ae26d1e121ea9750a.jpg"
+            alt="Imagem da Fixação da Data das Férias" width="40%">
+
+        <input autofocus id="campo-nome" type="text" placeholder="Digite o nome do funcionário">
+
+        <div class="container-div">
+            <label class="texto-label" id="label-data-inicial" for="campo-data-inicial">Data de Início:</label>
+            <input id="campo-data-inicial" type="date">
+        </div>
+
+        <div class="container-div">
+            <label class="texto-label" id="label-data-final" for="campo-data-final">Data de Término:</label>
+            <input id="campo-data-final" type="date">
+        </div>
+
+        <button id="login-button" onclick="clicarNoBotao()" type="button">Gerar carta</button>
+
+        <!-- Botão oculto - Java irá aparecer quando a função for ativada -->
+        <button style="display: none;" id="resetaFormulario" onclick="location.reload()">Gerar nova carta</button>
+
+    </form>
+
+    <script src="CartaFerias.js"></script>
+</body>
+
+</html>

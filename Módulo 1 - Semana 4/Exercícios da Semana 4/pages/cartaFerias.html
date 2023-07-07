@@ -3,9 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Carta Férias</title>
+  <style>
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    form {
+       margin: 0 auto;
+       width: 25%;
+    }
+
+    div > label {
+      font-weight: bold;
+      color: #5F6E7B;
+    }
+
+    .nome{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .datas {
+      display: flex; 
+      justify-content: space-between;
+    }
+
+    .dataIni {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nome input {
+      border-radius: 5px;
+      height: 25px;
+      border: 1px solid #383737;
+      outline: none;
+    }
+
+    .datas input {
+      border-radius: 5px;
+      height: 25px;
+      border: 1px solid #383737;
+      outline: none;
+    }
+
+    .dataFim {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-container {
+      display: flex;
+      justify-content: center;
+    }  
+    #send{
+      display: flex;
+      justify-content: center;
+    }
+
+    .defaultButton {
+      background-color: #6558F5;
+      color: #fff;
+      font-weight: bold;
+      height: 40px;
+      width: 200px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .input-error {
+      border-color:red;
+    }
+  </style>  
 </head>
+
 <body>
-  cartaFerias
+  <form id = "form-entrada">
+    <div class = "nome">
+      <label for = "inputNome"> Nome do funcionário</label>
+      <input id = "inputNome" placeholder="Digite seu nome">
+      <span id ="invalidName" hidden style="color:red; font-size: 12px;"> </span> 
+    </div> 
+    <br>
+
+    <div class = "datas">
+      <div class = "dataIni">
+        <label for = "inputDataIni"> Data de início</label>
+        <input id = "inputDataIni" type = "date"> 
+      </div>
+
+      <div class = "dataFim">
+        <label for = "inputDataFim"> Data de término</label>
+        <input id = "inputDataFim" type = "date"> 
+      </div>
+    </div> <br>
+
+    <span id = "send"> 
+      <button 
+        type = "button"
+        class ="defaultButton" 
+        onclick="validarForm()"> Gerar carta </button>
+    </span><br> 
+  </form>
+
+  <span class = "section-container"> 
+    <section hidden id = "texto-gerado">
+      <p id = "carta-ferias" ></p>
+      <button type = "button" 
+              class = "defaultButton"
+              onclick="mostrarForm()"> Gerar outra carta 
+      </button>
+    </section>
+  </span>
+
+  <!-- SCRIPT JS -->
+  <script>
+    const currentDate = new Date();
+    const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+                  'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    const dia =  currentDate.getDay();
+    const mesAtual = currentDate.getMonth();
+    const mesExtenso = meses[mesAtual];
+    const ano = currentDate.getFullYear();
+
+    function isNomeValido(){
+      nomeFuncionario = document.getElementById("inputNome").value;
+
+      if(nomeFuncionario === "") {
+        document.getElementById('inputNome').classList.add('input-error');
+        document.getElementById('inputNome').focus();
+        document.getElementById('invalidName').hidden = false;
+        document.getElementById('invalidName').innerText = "O nome é obrigatório";
+      }
+
+      return nomeFuncionario != "";
+    }
+
+    function isDatasValidas(){
+      dataInicial =  document.getElementById('inputDataIni').value;
+      dataFinal   =  document.getElementById('inputDataFim').value;
+
+      datasVazias = (dataInicial === "" || dataFinal === "");
+
+      if (datasVazias){
+        alert("Por favor, preencha as datas corretamente.");
+        return;
+      } else if(dataInicial > dataFinal) {
+        alert("A data inicial não pode ser maior que a data final!");
+        return;
+      } else {
+        return true;
+      }
+    }
+
+    function montarCartaSalario(){
+      nomeFuncionario = document.getElementById("inputNome").value;
+      dataInicial = document.getElementById("inputDataIni").value;
+      dataFinal   = document.getElementById("inputDataFim").value;
+
+      carta =  `Caro(a) responsável
+
+                Gostaria de solicitar minhas férias:
+
+                Nome do funcionário: ${nomeFuncionario}
+
+                Data de início: ${dataInicial}
+
+                Data de fim: ${dataFinal}
+
+                Agradeço a atenção.
+
+                Atenciosamente, ${nomeFuncionario}
+                
+                Gerado em ${dia} de ${mesExtenso} de ${ano}`;
+
+       return carta;
+    }
+
+    function mostrarCartaSalario(){
+      document.getElementById('form-entrada').hidden = true;
+      document.getElementById('texto-gerado').hidden = false;
+      document.getElementById('carta-ferias').innerText = montarCartaSalario();
+    }
+
+    function validarForm() {
+      if(isNomeValido() && isDatasValidas()) {
+        mostrarCartaSalario();  
+      }
+    }
+
+    function mostrarForm(){
+      document.getElementById('form-entrada').hidden = false;
+      document.getElementById('texto-gerado').hidden = true;
+      document.getElementById('invalidName').hidden = true;
+      document.getElementById('form-entrada').reset();
+      document.getElementById('inputNome').focus();
+    }
+
+  </script>
+
 </body>
 </html>
