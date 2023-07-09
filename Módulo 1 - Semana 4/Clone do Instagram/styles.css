@@ -120,3 +120,20 @@ Estilização Tela Home
     padding: 20px;
     background-color: #fafafa;
 }
+
+.galeria-fotos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.grid-item{
+    flex-basis: calc(33.33% - 10px); 
+    /* Permitir que a coluna caiba 3 fotos e se ajuste se necessário */
+    margin-bottom: 10px;
+}
+
+.galeria-fotos img {
+    width: 100%;
+}
+
