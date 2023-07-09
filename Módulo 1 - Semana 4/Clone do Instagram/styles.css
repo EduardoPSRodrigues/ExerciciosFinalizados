@@ -72,3 +72,51 @@ a{
 .input-error{
     border-color: red;
 }
+
+/* -------------------------------- 
+Estilização Tela Home
+-------------------------------- */
+
+#body-home {
+    margin: 0;
+}
+
+.container{
+    display: flex;
+}
+
+.slidebar{
+    background-color: #707b88;
+    color: white;
+    width: 200px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    /* Incluir padding e borda na largura total */
+    overflow-y: auto;
+    /* Adiciona barra de rolagem apenas quando necessário no eixo y */
+}
+
+.slidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* Ul tem uma margem padrão, por isso tivemos que zerar. */
+}
+
+.slidebar li {
+    margin-bottom: 20px; 
+    /* Espaçamento dos elementos do slide bar */
+    font-size: 24px;
+}
+
+.slidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.content{
+    flex: 1;
+    padding: 20px;
+    background-color: #fafafa;
+}
