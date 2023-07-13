@@ -1,6 +1,12 @@
+const usuarios = [
+  { email: "joao@gmail.com", senha: "123" },
+  { email: "maria@gmail.com", senha: "1234" },
+  { email: "jose@gmail.com", senha: "12345" },
+];
+
 function clicarNoBotao() {
-  var email = document.getElementById("campo-email").value;
-  var senha = document.getElementById("campo-senha").value;
+  const email = document.getElementById("campo-email").value;
+  const senha = document.getElementById("campo-senha").value;
 
   /* document é um elemento que contempla toda a minha página, então esta falando para
     ir no HTML e pegar um elemento pela ID dele */
@@ -21,38 +27,53 @@ function clicarNoBotao() {
 
   */
 
-    /* Se quiser mostrar todos os itens vermelhos, deixo tudo IF separado, mas 
+  /* Se quiser mostrar todos os itens vermelhos, deixo tudo IF separado, mas 
   se quero mostrar os erros de forma unitária e por ordem, uso o if, else if... */
-
 
   /* Colocar um reset no input error, se estiver algum erro, vai passar pelos IF
   e a borda vai ficar em vermelho */
-  document.getElementById("campo-email").classList.remove("input-error")
-  document.getElementById("campo-senha").classList.remove("input-error")
+  document.getElementById("campo-email").classList.remove("input-error");
+  document.getElementById("campo-senha").classList.remove("input-error");
 
   if (email === "") {
     document.getElementById("campo-email").classList.add("input-error");
     /* Caso o campo do e-mail fique sem preencher, a borda do input irá mudar para vermelho */
-
     document.getElementById("campo-email").focus();
     /* Deixar o campo-email selecionado ao dar erro. */
   } else if (senha === "") {
     document.getElementById("campo-senha").classList.add("input-error");
     /* Caso o campo do e-mail fique sem preencher, a borda do input irá mudar para vermelho */
     document.getElementById("campo-senha").focus();
-  } else{/* Função para deixar o button desabilitado até preencher os campos e para reduzir
+  } else {
+    /* Função para deixar o button desabilitado até preencher os campos e para reduzir
   a opacidade. Trocar o texto dentro do button para logando.
   Só vai cair nessa parte do código quando o IF e o ELSE IF forem verdadeiros*/
-  document.getElementById("login-button").disabled = true
-  document.getElementById("login-button").style.opacity = 0.5
-  document.getElementById("login-button").innerText = "Logando..."
 
-  /* window.location.href=""; - Pedir para o Java enviar para outra página, como se 
-  fosse a função "a" do HTML  */
-  window.location.href="https://www.instagram.com/accounts/password/reset/";
+    document.getElementById("login-button").disabled = true;
+    document.getElementById("login-button").style.opacity = 0.5;
+    document.getElementById("login-button").innerText = "Logando...";
 
+    //Verifica o email e a senha digitado no banco de dados, mas o find não armazena dados
+    //por isso é preciso criar uma variável para armazenar essa informação encontrada
+    //se a função find não encontrar um valor, o resultado é undefined, logo com a função if é falso.
+
+    //const usuariosEncontrado = usuarios.find((usuario) => usuario.email === email && usuario.senha === senha)
+    // Equivalente
+    const usuariosEncontrado = usuarios.find((usuario) => {
+      return usuario.email === email && usuario.senha === senha;
+    });
+
+    if (usuariosEncontrado) {
+      /* window.location.href=""; - Pedir para o Java enviar para outra página, como se 
+      fosse a função "a" do HTML  */
+      window.location.href = "./home.html";
+    } else {
+      //Resetar o botão.
+      document.getElementById("login-button").disabled = false;
+      document.getElementById("login-button").style.opacity = 1;
+      document.getElementById("login-button").innerText = "Entrar";
+      
+      alert("Usuário não cadastrado.");
+    }
   }
-
-
-  
 }
