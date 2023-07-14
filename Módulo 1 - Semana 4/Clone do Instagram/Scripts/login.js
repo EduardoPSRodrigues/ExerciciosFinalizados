@@ -1,8 +1,7 @@
-const usuarios = [
-  { email: "joao@gmail.com", senha: "123" },
-  { email: "maria@gmail.com", senha: "1234" },
-  { email: "jose@gmail.com", senha: "12345" },
-];
+import { usuarios } from "../Constantes/usuarios.js";
+
+const botaoLogin = document.getElementById("login-button");
+botaoLogin.addEventListener('click', clicarNoBotao)
 
 function clicarNoBotao() {
   const email = document.getElementById("campo-email").value;
@@ -72,7 +71,7 @@ function clicarNoBotao() {
       document.getElementById("login-button").disabled = false;
       document.getElementById("login-button").style.opacity = 1;
       document.getElementById("login-button").innerText = "Entrar";
-      
+
       alert("Usuário não cadastrado.");
     }
   }

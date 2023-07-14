@@ -94,7 +94,10 @@ Estilização Tela Home
     box-sizing: border-box;
     /* Incluir padding e borda na largura total */
     overflow-y: auto;
-    /* Adiciona barra de rolagem apenas quando necessário no eixo y */
+    /* Adiciona barra de rolagem apenas quando necessário no eixo y 
+    Position fixed faz com que o slide bar fique travado na tela, ou seja, acrescento o scroll nas imagens
+    mas o slidebar fica 100vh de tamanho da tela, mas ele fica na frente do grid*/
+    position: fixed;
 }
 
 .slidebar ul {
@@ -137,3 +140,32 @@ Estilização Tela Home
     width: 100%;
 }
 
+/* Estilos Explorar */
+
+/* Formatando sem a função grid 
+.container-grid{
+    width: calc(80% - 200px);
+     Usou o calc com menos 200px pois o tamanho do slide bar é de 200px 
+    margin: 0 auto;
+}
+
+.container-grid img{
+    width: 200px;
+}
+*/
+
+
+/* Formatando com a função GRID */
+
+.container-grid-layout{
+  display: grid;  
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+   /* Se faz necessário pois fixei o slidebar em 200px  */
+  margin-left: 200px;
+}
+
+.container-grid-layout img{
+width: 100%;
+height: auto;
+  }
