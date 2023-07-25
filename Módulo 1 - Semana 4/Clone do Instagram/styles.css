@@ -118,10 +118,17 @@ Estilização Tela Home
     text-decoration: none;
 }
 
+.content-explorar{
+    flex: 1;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
 .content{
     flex: 1;
     padding: 20px;
     background-color: #fafafa;
+    margin-left: 200px;
 }
 
 .galeria-fotos{
@@ -169,3 +176,36 @@ Estilização Tela Home
 width: 100%;
 height: auto;
   }
+
+
+/* -------------------------------- 
+Estilização Seguidores
+-------------------------------- */
+
+.tabela-seguidores{
+    width: 100%;
+    border: 0;
+}
+
+.tabela-seguidores thead{
+    background-color: #4bb4f8;
+    color: white;
+}
+
+.tabela-seguidores tbody tr{
+    height: 50px;
+}
+
+.tabela-seguidores tbody td{
+text-align: center;
+}
+
+.tabela-seguidores tbody td img{
+    border-radius: 50%;
+    width: 80px;
+}
+
+#input-pesquisa{
+    width: 100%;
+    margin-bottom: 20px;
+}

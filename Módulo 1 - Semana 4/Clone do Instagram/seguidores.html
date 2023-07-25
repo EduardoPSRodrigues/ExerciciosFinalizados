@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seguidores</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="Scripts/seguidores.js" type="module"></script>
 </head>
 
 <body id="body-home">
@@ -23,16 +24,26 @@
 
         <div class="content" id="conteudo-seguidores">
 
-            <h1>/Seus seguidores</h1>
-            <table>
+            <h1>Seus seguidores</h1>
+
+            <form action="" id="form-pesquisa">
+                <input id="input-pesquisa" type="text" placeholder="Procurar seguidores">
+            </form>
+
+            <table border="1" class="tabela-seguidores">
 
                 <thead>
                     <tr>
-                        <th></th>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>N° de Seguidores</th>
+                        <th>N° de Pulicações</th>
                     </tr>
                 </thead>
 
-                <tbody></tbody>
+                <tbody id="corpo-tabela">
+
+                </tbody>
 
             </table>
 
