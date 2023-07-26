@@ -1,9 +1,11 @@
 import { usuarios } from "../Constantes/usuarios.js";
 
-const botaoLogin = document.getElementById("login-button");
-botaoLogin.addEventListener('click', clicarNoBotao)
+const botaoLogin = document.getElementById("form-login");
+botaoLogin.addEventListener('submit', realizarLogin)
 
-function clicarNoBotao() {
+function realizarLogin(evento) {
+  evento.preventDefault()
+
   const email = document.getElementById("campo-email").value;
   const senha = document.getElementById("campo-senha").value;
 
@@ -34,15 +36,24 @@ function clicarNoBotao() {
   document.getElementById("campo-email").classList.remove("input-error");
   document.getElementById("campo-senha").classList.remove("input-error");
 
+      // Função para limpar os erros do formulário
+      resetErroFormulario()
+
   if (email === "") {
     document.getElementById("campo-email").classList.add("input-error");
     /* Caso o campo do e-mail fique sem preencher, a borda do input irá mudar para vermelho */
     document.getElementById("campo-email").focus();
     /* Deixar o campo-email selecionado ao dar erro. */
+    document.getElementById("erro-email").hidden = false;
+    document.getElementById("erro-email").innerText = "Digite um e-mail válido"
+    
   } else if (senha === "") {
     document.getElementById("campo-senha").classList.add("input-error");
     /* Caso o campo do e-mail fique sem preencher, a borda do input irá mudar para vermelho */
     document.getElementById("campo-senha").focus();
+    document.getElementById("erro-senha").hidden = false;
+    document.getElementById("erro-senha").innerText = "Senha incorreta."
+ 
   } else {
     /* Função para deixar o button desabilitado até preencher os campos e para reduzir
   a opacidade. Trocar o texto dentro do button para logando.
@@ -73,6 +84,17 @@ function clicarNoBotao() {
       document.getElementById("login-button").innerText = "Entrar";
 
       alert("Usuário não cadastrado.");
+      
     }
   }
 }
+
+function resetErroFormulario() {
+  /* Colocar um reset no input error (vinculado as bordas) */
+  document.getElementById("campo-email").classList.remove("input-error")
+  document.getElementById("campo-senha").classList.remove("input-error")
+  
+  /* Colocar um reset no erro-nome (vinculado as mensagens de erro) */
+  document.getElementById("erro-email").hidden = true;
+  document.getElementById("erro-senha").hidden = true;
+  }

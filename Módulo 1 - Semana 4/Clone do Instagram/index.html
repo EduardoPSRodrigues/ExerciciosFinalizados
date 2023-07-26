@@ -4,26 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clone Instagram</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <form class="formulario">
+<!-- O tipo submit esta vinculado ao form, por isso que coloca o id no formuladrio e tirou do button -->
+    <form class="formulario" id="form-login">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/840px-Instagram_logo.svg.png"
             alt="Logotipo do instagram" width="250px">
 
+        <div class="input-area">    
         <input autofocus id="campo-email" type="text" name="" placeholder="Telefone, nome do usuário ou e-mail">
+        <span id="erro-email" class="texto-erro" hidden></span>
+        </div>
 
+        <div class="input-area">
         <input id="campo-senha" type="password" name="" placeholder="Senha">
+        <span id="erro-senha" class="texto-erro" hidden></span>
+        </div>
 
         <!-- autofocus - quando minha tela é recarregada, esse input será selecionado
         automaticamente -->
 
-        <button id="login-button" type="button">Entrar</button>
+        <button id="login-button" type="submit">Entrar</button>
 
-        <a href="">Esqueceu a senha?</a>
+        <a href="https://www.instagram.com/accounts/password/reset/">Esqueceu a senha?</a>
 
         <!-- role="button" - Transforma semanticamente a categoria "a" em um button 
         <a href="" role="button">Esqueceu a senha?</a> 
