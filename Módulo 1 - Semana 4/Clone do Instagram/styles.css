@@ -209,3 +209,21 @@ text-align: center;
     width: 100%;
     margin-bottom: 20px;
 }
+
+.observation-mensagem{
+    width: 100%;
+    background-color: #4bb4f8;
+    color: white;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid #4bb4f8;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.disabled-mensagem{
+display: none;
+}
