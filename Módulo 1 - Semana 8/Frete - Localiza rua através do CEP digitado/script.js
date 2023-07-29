@@ -11,6 +11,9 @@ function exibirDados(evento) {
   if (cepInput.length === 8 || cepInput.length === 9) {
     fetch(`https://viacep.com.br/ws/${cepInput}/json/`)
       .then((respostaDoSite) => {
+        if (respostaDoSite.ok === false){
+          throw new Error('Houve uma falha na operação.')
+        }
         return respostaDoSite.json();
       })
       .then((dadosDoLogradouro) => {
@@ -45,4 +48,7 @@ function exibirDados(evento) {
 * .catch() caso o fetch não encontre o CEP, o .catch vai trazer uma informação de erro. Quando acontece uma rejeição
   não passa pelo then, vai direto para o catch()   
 * o site disponibiliza o código em javascript e HTML já formatado em  https://viacep.com.br/exemplo/javascript/
-  */
+* if (respostaDoSite.ok === false) {throw new Error('Houve uma falha na operação.')} se o parametro ok for false é para ir direto 
+  para o catch()
+
+*/
