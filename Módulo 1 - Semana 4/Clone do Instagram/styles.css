@@ -227,3 +227,74 @@ text-align: center;
 .disabled-mensagem{
 display: none;
 }
+
+/* -------------------------------- 
+Estilização Chat
+-------------------------------- */
+
+#chat {
+    width: 90%;
+    height: 400px;
+    border: 2px solid #333c43;
+    overflow-y: scroll;
+    padding: 10px;
+    background: #2b343b;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#chat-form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+#messageInput:focus {
+    border: 2px solid #286ee0;
+}
+
+#messageInput {
+    background-color: #2b343b;
+    color: #FFF;
+    border: 2px solid #394249;
+    width: 90%;
+    padding: 5px 5px 5px 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+.sender {
+    font-weight: bold;
+}
+
+.user-message {
+    text-align: left;
+}
+
+.bot-message {
+    text-align: right;
+}
+
+
+
+
+#chat::-webkit-scrollbar {
+    width: 12px;
+}
+
+#chat::-webkit-scrollbar-track {
+    background: #1c1d25;
+    border-radius: 4px;
+}
+
+#chat::-webkit-scrollbar-thumb {
+    background-color: #286ee0;
+    border-radius: 8px;
+    border: 2px solid #3578E5;
+}

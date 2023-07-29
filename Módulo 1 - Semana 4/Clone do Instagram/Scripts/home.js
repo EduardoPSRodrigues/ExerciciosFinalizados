@@ -21,6 +21,27 @@ var arrayImagem = [
 
 var listaSeguidores = ["Geraldo", "Francisco", "Gustavo", "Coelho"];
 
+const horaAtual = document.getElementById("hora-Atual");
+const modalPermission = document.getElementById("modal-permission");
+const botaoAceitar = document.getElementById("aceitar");
+const botaoRejeitar = document.getElementById("rejeitar");
+
+botaoAceitar.addEventListener('click', () => { 
+  salvarDecisao('Aceitou os cookies');
+  modalPermission.style.display = 'none';
+});
+
+
+botaoRejeitar.addEventListener('click', () => { 
+  salvarDecisao('Recusou os cookies');
+  modalPermission.style.display = 'none';
+});
+
+function salvarDecisao(decisao) {
+    localStorage.setItem('decisao-permissao', decisao);
+    console.log(decisao);
+}
+
 function mostrarInformacoes() {
   //Mostrar informações no HTML de acordo com os dados do objeto
 
@@ -53,7 +74,45 @@ function exibirImagem() {
   });
 }
 
+
+function gerarTextoBemVindo(){
+  
+  const nome = localStorage.getItem('nomeUsuario')
+  const msgBemVindo = document.getElementById('bem-vindo-usuario')
+
+  //Se não encontrar o nome do usuário, então irá deslogar o usuário.
+  if (!nome){
+    window.location.href = './index.html'
+  } else {
+    msgBemVindo.innerText = `Bem-vindo ${nome}`
+  }
+
+
+}
+
+gerarTextoBemVindo()
 // Assim que abrir a página é para executar a função
 window.onload = mostrarInformacoes;
 window.onload = exibirImagem;
 
+function exibirModal(){
+
+   const decisao = localStorage.getItem('decisao-permissao')
+
+ if (decisao !== 'Aceitou os cookies' && decisao !== 'Recusou os cookies'){
+  modalPermission.style.display = 'flex'
+ }
+
+}
+
+setTimeout(exibirModal, 3000)
+
+//setInterval faz um loop de acordo com o tempo que voce passa, ou seja, a cada segundo estou 
+//atualizando a minha função
+function exibirData(){
+
+  const data = new Date().toTimeString()
+  // Vou pegar a hora em forma de string
+  horaAtual.innerText = data
+}
+setInterval(exibirData, 1000)
