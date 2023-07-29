@@ -1,0 +1,12 @@
+{
+  "usuarios": [
+    {
+      "nomeCompleto": "Eduardo Phelipe",
+      "email": "projetosguimaraesrodrigues@gmail.com",
+      "telefone": "24999919295",
+      "nomeUsuario": "EduardoPSRodrigues",
+      "senha": "12345678",
+      "id": 1
+    }
+  ]
+}
