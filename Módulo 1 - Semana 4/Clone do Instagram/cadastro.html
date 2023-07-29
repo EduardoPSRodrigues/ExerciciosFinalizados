@@ -10,7 +10,7 @@
 
 <body>
 
-    <form class="formulario">
+    <form class="formulario" id="formulario-Cadastro">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/840px-Instagram_logo.svg.png"
             alt="Logotipo do instagram" width="250px">
 
@@ -47,19 +47,17 @@
             e Política de Cookies
         </p>
 
-        <!-- autofocus - quando minha tela é recarregada, esse input será selecionado
-        automaticamente -->
-
-        <button id="login-button" onclick="fazerCadastro()" type="button">Cadastre-se</button>
-
-        <!-- onclick - ao clicar no botão, irá chamar a minha função
-        Quando o button for type=submit, ao clicar a tela dá um reset e some as informações
-        Quando for type=button, ao clicar a informação é transferida mas fica na tela
-    -->
+        <button id="login-button" type="submit">Cadastre-se</button>
 
     </form>
 
-    <script src="Scripts/cadastro.js"></script>
+    <script src="Scripts/cadastro.js" type="module"></script>
 </body>
 
 </html>
+
+<!-- Informações do projeto:
+* autofocus - quando minha tela é recarregada, esse input será selecionado automaticamente
+* Quando o button for type=submit, ao clicar a tela dá um reset e some as informações
+  Quando for type=button, ao clicar a informação é transferida mas fica na tela
+-->
