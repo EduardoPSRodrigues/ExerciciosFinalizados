@@ -7,6 +7,62 @@
       "nomeUsuario": "EduardoPSRodrigues",
       "senha": "12345678",
       "id": 1
+    },
+    {
+      "nomeCompleto": "Taisa Guimarães",
+      "email": "taisa@gmail.com",
+      "telefone": "24123456789",
+      "nomeUsuario": "Isa Guimarães",
+      "senha": "12345678",
+      "id": 2
+    },
+    {
+      "nomeCompleto": "Felipe de Assis",
+      "email": "felipe@gmail.com",
+      "telefone": "24987654321",
+      "nomeUsuario": "Felipóvisk",
+      "senha": "123456789",
+      "id": 3
+    },
+    {
+      "nomeCompleto": "Marina dos Santos",
+      "email": "marina@gmail.com",
+      "telefone": "24123654987",
+      "nomeUsuario": "Mary Santos",
+      "senha": "123456789",
+      "id": 4
+    },
+    {
+      "nomeCompleto": "João Martins",
+      "email": "joao@gmail.com",
+      "telefone": "24555546869",
+      "nomeUsuario": "Joãozinho",
+      "senha": "123456789",
+      "id": 5
+    },
+    {
+      "nomeCompleto": "Suely Camargo",
+      "email": "suely@gmail.com",
+      "telefone": "24654987989",
+      "nomeUsuario": "Susu",
+      "senha": "123456789",
+      "id": 6
+    },
+    {
+      "nomeCompleto": "Cristina Santos",
+      "email": "cristina@gmail.com",
+      "telefone": "24123456789",
+      "nomeUsuario": "Cris Santos",
+      "senha": "123456789",
+      "id": 7
+    },
+    {
+      "nomeCompleto": "Pai José",
+      "email": "jose@gmail.com",
+      "telefone": "24999989897",
+      "nomeUsuario": "Pai Josef",
+      "senha": "123456789",
+      "id": 8
     }
   ]
 }
