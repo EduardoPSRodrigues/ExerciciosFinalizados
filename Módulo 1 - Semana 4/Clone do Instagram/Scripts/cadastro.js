@@ -52,7 +52,7 @@ function fazerCadastro(evento) {
   } else {
     loginButton.disabled = true;
     loginButton.style.opacity = 0.5;
-    loginButton.innerText = "Logando...";
+    loginButton.innerText = "Cadastrando...";
 
     //Cadastrar os dados
     fetch('http://localhost:3333/usuarios', {
@@ -68,6 +68,16 @@ function fazerCadastro(evento) {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
+    })
+    .then(() => {
+      window.location.href = "./index.html";
+      alert('Usuário cadastrado com sucesso!')
+    })
+    .catch(()=>{
+      alert('Desculpe. Houve um erro ao cadastrar o usuário.')
+      loginButton.disabled = false;
+      loginButton.style.opacity = 1;
+      loginButton.innerText = "Cadastre-se";
     })
   }
 }
