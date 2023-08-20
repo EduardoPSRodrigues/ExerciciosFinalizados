@@ -1,5 +1,5 @@
 <template>
-    <div class="form-new">
+    <form @submit.prevent="handleSubmit" class="form-new">
         <h2>TELA CADASTRO</h2>
 
         <label for="name">Nome Completo:</label>
@@ -49,10 +49,14 @@
         <label for="CartaApresentacao">Carta de Apresentação:</label>
         <textarea id="CartaApresentacao" cols="30" rows="10" v-model="CartaApresentacao"></textarea>
 
-    </div>
+        <button type="submit">Cadastrar</button>
+    </form>
 </template>
 
 <script>
+
+import * as yup from 'yup'
+
 export default {
     data() {
         return {
@@ -66,14 +70,43 @@ export default {
             CartaApresentacao: '',
         }
     },
-    watch: {
-        areaInteresse(newValue, oldValue){
-            if (newValue !== oldValue){
-                this.habilidades = []
+    methods: {
+        handleSubmit() {
+
+            try {
+
+                const schema = yup.object().shape({
+
+                    name: yup.string().required('O nome é obrigatório.'),
+                    email: yup.string().email('O e-mail não é válido.').required('O e-mail é obrigatório.'),
+                    whatsapp: yup.string().required('O telefone é obrigatório.'),
+                    areaInteresse: yup.string().required('A área de interesse é obrigatória.'),
+                    nivelProfissional: yup.string().required('O nível profissional é obrigatório.'),
+                    CartaApresentacao: yup.string().min(10, "A carta de apresentação deve ter no mínimo 10 caracteres.").max(1000, "A carta de apresentação deve ter entre 10-1000 caracteres.").required('A carta de apresentação é obrigatória.'),
+
+                })
+
+                schema.validateSync({
+                    name: this.name,
+                    email: this.email,
+                    whatsapp: this.whatsapp,
+                    areaInteresse: this.areaInteresse,
+                    nivelProfissional: this.nivelProfissional,
+                    CartaApresentacao: this.CartaApresentacao,
+                })
+            } catch (error) {
+                alert('erro no formulário')
             }
         },
-    },
+        watch: {
+            areaInteresse(newValue, oldValue) {
+                if (newValue !== oldValue) {
+                    this.habilidades = []
+                }
+            },
+        },
 
+    }
 }
 </script>
 
