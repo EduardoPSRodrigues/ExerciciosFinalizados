@@ -1,6 +1,6 @@
 <template>
   <div>
-    PÁGINA INICIAL
+    <router-view> </router-view>
   </div>
 </template>
 
