@@ -1,61 +1,80 @@
 <template>
     <form @submit.prevent="handleSubmit" class="form-new">
-        <h2>TELA CADASTRO</h2>
+        <h1>Cadastro de Talentos</h1>
 
-        <label for="name">Nome Completo:</label>
-        <input type="text" id="name" v-model="name">
-        {{ this.errors.name }}
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" v-model="email">
-        {{ this.errors.email }}
-
-        <label for="dataNascimento">Data de Nascimento:</label>
-        <input type="date" id="dataNascimento" v-model="dataNascimento">
-        {{ this.errors.dataNascimento }}
-
-        <label for="whatsapp">WhatsApp:</label>
-        <input type="phone" id="whatsapp" v-model="whatsapp">
-        {{ this.errors.whatsapp }}
-
-        <label for="areaInteresse">Área de Interesse:</label>
-        <select id="areaInteresse" v-model="areaInteresse">
-            <option value="">Selecione um item</option>
-            <option value="Frontend">Frontend</option>
-            <option value="Backend">Backend</option>
-            <option value="Full Stack">Full Stack</option>
-        </select>
-        {{ this.errors.areaInteresse }}
-
-        <label for="nivelProfissional">Nível profissional:</label>
-        <select id="nivelProfissional" v-model="nivelProfissional">
-            <option value="">Selecione um item</option>
-            <option value="Junior">Junior</option>
-            <option value="Pleno">Pleno</option>
-            <option value="Senior">Senior</option>
-        </select>
-        {{ this.errors.nivelProfissional }}
-
-        <p>Selecione suas habilidades:</p>
-
-        <div v-if="areaInteresse === 'Frontend' || areaInteresse === 'Full Stack'">
-            <label><input type="checkbox" value="HTML" v-model="habilidades">HTML</label>
-            <label><input type="checkbox" value="CSS" v-model="habilidades">CSS</label>
-            <label><input type="checkbox" value="Java Script" v-model="habilidades">Java Script</label>
-            <label><input type="checkbox" value="Vue" v-model="habilidades">Vue</label>
+        <div class="form-element">
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" v-model="name">
+            <span class="mensagem-erro">{{ this.errors.name }}</span>
         </div>
 
-        <div v-if="areaInteresse === 'Backend' || areaInteresse === 'Full Stack'">
-            <label><input type="checkbox" value="Node" v-model="habilidades">Node</label>
-            <label><input type="checkbox" value="PHP" v-model="habilidades">PHP</label>
-            <label><input type="checkbox" value="Laravel" v-model="habilidades">Laravel</label>
-            <label><input type="checkbox" value="Java" v-model="habilidades">Java</label>
+        <div class="form-element">
+            <label for="email">Email:</label>
+            <input type="email" id="email" v-model="email">
+            <span class="mensagem-erro">{{ this.errors.email }}</span>
         </div>
-        {{ this.errors.habilidades }}
 
-        <label for="CartaApresentacao">Carta de Apresentação:</label>
-        <textarea id="CartaApresentacao" cols="30" rows="10" v-model="CartaApresentacao"></textarea>
-        {{ this.errors.CartaApresentacao }}
+        <div class="form-element">
+            <label for="dataNascimento">Data de Nascimento:</label>
+            <input type="date" id="dataNascimento" v-model="dataNascimento">
+            <span class="mensagem-erro">{{ this.errors.dataNascimento }}</span>
+        </div>
+
+        <div class="form-element">
+            <label for="whatsapp">WhatsApp:</label>
+            <input type="phone" id="whatsapp" v-model="whatsapp">
+            <span class="mensagem-erro">{{ this.errors.whatsapp }}</span>
+        </div>
+
+        <div class="form-element">
+            <label for="areaInteresse">Área de Interesse:</label>
+            <select id="areaInteresse" v-model="areaInteresse">
+                <option value="">Selecione um item</option>
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+                <option value="Full Stack">Full Stack</option>
+            </select>
+            <span class="mensagem-erro">{{ this.errors.areaInteresse }}</span>
+        </div>
+
+        <div class="form-element">
+            <label for="nivelProfissional">Nível profissional:</label>
+            <select id="nivelProfissional" v-model="nivelProfissional">
+                <option value="">Selecione um item</option>
+                <option value="Junior">Junior</option>
+                <option value="Pleno">Pleno</option>
+                <option value="Senior">Senior</option>
+            </select>
+            <span class="mensagem-erro">{{ this.errors.nivelProfissional }}</span>
+        </div>
+
+        <div class="form-element">
+            <p>Selecione suas habilidades:</p>
+
+            <div class="form-checkbox" v-if="areaInteresse === 'Frontend' || areaInteresse === 'Full Stack'">
+                <label><input type="checkbox" value="HTML" v-model="habilidades">HTML</label>
+                <label><input type="checkbox" value="CSS" v-model="habilidades">CSS</label>
+                <label><input type="checkbox" value="Java Script" v-model="habilidades">Java Script</label>
+                <label><input type="checkbox" value="Vue" v-model="habilidades">Vue</label>
+            </div>
+        </div>
+
+        <div class="form-element">
+            <div class="form-checkbox" v-if="areaInteresse === 'Backend' || areaInteresse === 'Full Stack'">
+                <label><input type="checkbox" value="Node" v-model="habilidades">Node</label>
+                <label><input type="checkbox" value="PHP" v-model="habilidades">PHP</label>
+                <label><input type="checkbox" value="Laravel" v-model="habilidades">Laravel</label>
+                <label><input type="checkbox" value="Java" v-model="habilidades">Java</label>
+            </div>
+            <span class="mensagem-erro">{{ this.errors.habilidades }}</span>
+        </div>
+
+        <div class="form-element">
+            <label for="CartaApresentacao">Carta de Apresentação:</label>
+            <textarea id="CartaApresentacao" cols="30" rows="10" placeholder="Digite aqui a sua carta de apresentação."
+                v-model="CartaApresentacao"></textarea>
+            <span class="mensagem-erro">{{ this.errors.CartaApresentacao }}</span>
+        </div>
 
         <button type="submit">Cadastrar</button>
     </form>
@@ -103,6 +122,7 @@ export default {
                     whatsapp: this.whatsapp,
                     areaInteresse: this.areaInteresse,
                     nivelProfissional: this.nivelProfissional,
+                    habilidades: this.habilidades,
                     CartaApresentacao: this.CartaApresentacao,
                 }, { abortEarly: false })
 
@@ -151,7 +171,53 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
+    margin: 0 auto;
+    width: 60%;
+    border-radius: 4px;
+    border: 2px solid #d3d0d0d5;
+    gap: 16px;
+    padding: 12px;
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.form-checkbox {
+    display: flex;
+    gap: 10px;
+}
+
+.mensagem-erro {
+    color: red;
+    margin: 4px;
+    font-size: small;
+}
+
+label,
+h1,
+p {
+    font-weight: bold;
+
+}
+
+button {
+    background-color: #4bb4f8;
+    color: white;
+
+    font-size: 16px;
+
+    height: 40px;
+    width: 40%;
+
+    border-radius: 8px;
+    border: none;
+}
+
+button:hover {
+    background-color: #2985c2;
 }
 </style>
 
