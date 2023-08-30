@@ -2,73 +2,87 @@
   "produtos": [
     {
       "id": 1,
-      "imagem": "https://www.lojatoyscollections.com.br/cdn/shop/products/Funko-Pop-BoRuto--Naruto---Hokage--724-5e4d188fcbb82_720x.jpg?v=1656621416",
+      "imagem": "https://acdn.mitiendanube.com/stores/001/905/923/products/b740ea3b3fb8b4543c50a8275b94be22-0775f03376b08b627e16836614430220-640-0.webp",
       "nome": "Naruto Uzumaki",
       "preco": 89.90,
       "parcela": 8.99
     },
     {
       "id": 2,
-      "imagem": "caminho/para/outra/imagem.jpg",
+      "imagem": "https://acdn.mitiendanube.com/stores/001/905/923/products/6439eb1ca54560896eac1f7835275be9-c02bf19e8c631256a216836613079654-640-0.webp",
       "nome": "Sasuke Uchiha",
       "preco": 50.00,
       "parcela": 5.00
     },
     {
       "id": 3,
-      "imagem": "caminho/para/outra/imagem.jpg",
+      "imagem": "https://geekfanaticos.fbitsstatic.net/img/p/funko-pop-sakura-183-naruto-shippuden-73425/259912.jpg?w=800&h=800&v=no-change&qs=ignore",
       "nome": "Sakura Haruno",
       "preco": 75.00,
       "parcela": 7.50
     },
     {
       "id": 4,
-      "imagem": "caminho/para/outra/imagem.jpg",
+      "imagem": "https://acdn.mitiendanube.com/stores/001/905/923/products/2c0a4aeaa3b514a7c1e7010792c07747-4ef346b53cd180fbc416836614133035-640-0.webp",
       "nome": "Kakashi Hatake",
       "preco": 60.00,
       "parcela": 6.00
     },
     {
       "id": 5,
-      "imagem": "caminho/para/outra/imagem.jpg",
+      "imagem": "data:image/jpeg;base64,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",
       "nome": "Itachi Uchiha",
       "preco": 95.00,
       "parcela": 9.50
     },
     {
       "id": 6,
-      "imagem": "caminho/para/outra/imagem.jpg",
-      "nome": "Hinata Hyuga",
+      "imagem": "https://geekfanaticos.fbitsstatic.net/img/p/funko-pop-rock-lee-739-special-edition-naruto-shippuden-72509/258996.jpg?w=800&h=800&v=no-change&qs=ignore",
+      "nome": "Rock Lee",
       "preco": 45.00,
       "parcela": 4.50
     },
     {
       "id": 7,
-      "imagem": "caminho/para/outra/imagem.jpg",
+      "imagem": "https://geekfanaticos.fbitsstatic.net/img/p/funko-pop-gaara-728-naruto-shippuden-71535/258020.jpg?w=800&h=800&v=no-change&qs=ignore",
       "nome": "Gaara do Deserto",
       "preco": 70.00,
       "parcela": 7.00
     },
     {
       "id": 8,
-      "imagem": "caminho/para/outra/imagem.jpg",
+      "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhUaRWd2CcQKQ4EYeCH87bGrogWhJ5Q1aTyqMtjFkfWT2iigoySdOpti9sUxbN8t5bYNs&usqp=CAU",
       "nome": "Jiraiya",
       "preco": 55.00,
       "parcela": 5.50
     },
     {
       "id": 9,
-      "imagem": "caminho/para/outra/imagem.jpg",
+      "imagem": "https://geekfanaticos.fbitsstatic.net/img/p/funko-pop-orochimaru-729-naruto-shippuden-71534/258019.jpg?w=800&h=800&v=no-change&qs=ignore",
       "nome": "Orochimaru",
       "preco": 65.00,
       "parcela": 6.50
     },
     {
       "id": 10,
-      "imagem": "caminho/para/outra/imagem.jpg",
+      "imagem": "https://images-americanas.b2w.io/produtos/6589259882/imagens/funko-pop-animation-naruto-lady-tsunade/6589259882_1_large.jpg",
       "nome": "Tsunade Senju",
       "preco": 80.00,
       "parcela": 8.00
+    },
+    {
+      "id": 11,
+      "imagem": "https://pop-figures.com/media/img/figurine/1339-funko-pop-figure-naruto-shippuden-hinata-with-twin-lion-fists.jpg",
+      "nome": "Hinata Shippuden",
+      "preco": 100.00,
+      "parcela": 10.00
+    },
+    {
+      "id": 12,
+      "imagem": "https://aimshop.dk/billeder/search/111286-shikamaru-nara-pop-animation-vinyl-",
+      "nome": "Shikamaru Shippuden",
+      "preco": 150.00,
+      "parcela": 15.00
     }
   ]
 }
