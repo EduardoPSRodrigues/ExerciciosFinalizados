@@ -1,7 +1,10 @@
 <template>
-    <h1>Produtos {{ this.$store.state.produtosCarrinho.length }}</h1>
+    <h1>Produtos</h1>
+    <!-- Com essa linha de código eu consigo mostrar na tela a informação que está no store
+      {{ this.$store.state.produtosCarrinho.length }} -->
   
-    <button @click="this.$store.dispatch('alterarNome', { nome: 'douglas' })">Cliquei</button>
+    <!-- Botão para alterar o estado global da variável
+      <button @click="this.$store.dispatch('alterarNome', { nome: 'douglas' })">Cliquei</button> -->
     <div class="list-products">
         
       <v-card width="300px" class="pa-2 mb-2" v-for="product in produtosRestantes" :key="product.id">
@@ -47,6 +50,7 @@
        
         return this.products.filter((product) => {
           const itemExiste = this.$store.state.produtosCarrinho.find((item) => item.id === product.id)
+          //Quando retorna falso dentro do filter, ele entende que você quer tirar aquele item
           if (itemExiste) return false
           return true
         })
