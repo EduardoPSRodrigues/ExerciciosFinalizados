@@ -1,5 +1,5 @@
 <template>
-    <h1>Produtos</h1>
+    <h1 class="my-3 text-center">Lista de Produtos</h1>
     <!-- Com essa linha de código eu consigo mostrar na tela a informação que está no store
       {{ this.$store.state.produtosCarrinho.length }} -->
   
