@@ -25,5 +25,12 @@
           </td>
         </tr>
       </tbody>
+
+      <v-btn color="warning" dark>
+        <router-link to="/" color="#FFF" class="text-decoration-none">
+        Voltar para Loja
+      </router-link>
+      </v-btn>
+
     </v-table>
   </template>
