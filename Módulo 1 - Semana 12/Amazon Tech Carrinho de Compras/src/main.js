@@ -8,6 +8,7 @@ import '@mdi/font/css/materialdesignicons.css'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import colors from 'vuetify/lib/util/colors'
 
 // Vuex
 import store from './store'
@@ -20,6 +21,22 @@ const vuetify = createVuetify({
     },
   })
 
+  export default createVuetify({
+    theme: {
+      themes: {
+        light: {
+          dark: false,
+          colors: {
+            primary: colors.red.darken1, // #E53935
+            secondary: colors.red.lighten4, // #FFCDD2
+            
+          }
+        },
+      },
+    },
+  })
+  
+
 const app = createApp(App)
 
 app
@@ -27,3 +44,4 @@ app
 .use(vuetify)
 .use(store)
 .mount('#app')
+
